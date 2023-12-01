@@ -13,3 +13,7 @@ tasks {
         gradleVersion = "8.5"
     }
 }
+
+repositories {
+    mavenCentral()
+}
