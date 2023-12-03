@@ -47,7 +47,6 @@ fun q2(testInput: List<String>) : Int {
 
     for (row in testInput) {
         val rowList = row.trim().split(":")
-        val game = rowList[0].split(" ")[1]
         val setList = rowList[1].split(";")
 
         val available = mutableMapOf(
