@@ -2,8 +2,28 @@ package day01
 
 import readInput
 
-fun main() {
-    val testInput = readInput("input")
+
+fun q1(testInput: List<String>) : Int {
+
+    var sum = 0
+
+    for (line in testInput){
+        val digitList: MutableList<String> = mutableListOf()
+
+        for (char in line){
+            if (char.isDigit()){
+                digitList.add(char.toString())
+            }
+        }
+        val number = (digitList.first() + digitList.last()).toInt()
+        sum += number
+    }
+
+    return sum
+
+}
+
+fun q2(testInput: List<String>) : Int {
 
     val wordToNumDict = mapOf(
         "one" to "1",
@@ -45,6 +65,14 @@ fun main() {
         sum += number
     }
 
-print(sum)
+    return sum
+
+}
+
+fun main() {
+    val testInput = readInput("Day01/input")
+
+    println("Q1: " + q1(testInput))
+    println("Q2: " + q2(testInput))
 
 }
